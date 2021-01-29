@@ -1,34 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS TypeScript Starter with ESLint/Prettier for VSCode
 
-## Getting Started
+## How to use
 
-First, run the development server:
+Fork/clone copy... 
 
-```bash
+```
+npm i
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Debugging is enabled for VSCode just run the Next:Chrome to debug
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## How this Starter was Built
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Create a nextjs starter
+```
+npx create-next-app next-spa-starter
+```
 
-## Learn More
+Add Typescript
 
-To learn more about Next.js, take a look at the following resources:
+```
+touch tsconfig.json
+npm install --save-dev typescript @types/react @types/node
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the dev server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+npm run dev
+```
 
-## Deploy on Vercel
+It will populate the `tsconfig.json` with the default typescript config and create `next-env.d.ts`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Convert the project to typescript
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+rename `pages/api/hello.js` to `pages/api/hello.ts`
+rename `pages/_app.js` to `pages/_app.tsx`
+rename `pages/index.js` to `pages/index.tsx`
+
+Edit `tsconfig.json` and Turn on strict mode
+
+```
+    "strict": true,
+```
+
+Setup our dev environment
+
+Add the following files:
+`.prettierrc`,`.gitignore`,`.eslintrc.js`
+
+
+ESLint
+
+```
+npm install eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser --save-dev
+```
+
+Prettier
+
+```
+npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+```
+
